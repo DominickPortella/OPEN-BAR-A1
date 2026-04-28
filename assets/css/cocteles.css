@@ -1,0 +1,319 @@
+.cocteles-main {
+    padding: 120px 20px 60px;
+    /* Espacio para el header fijo */
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    color: #D4AF37;
+    /* El dorado que estás usando */
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.cocteles-grid {
+    display: grid;
+    /* Forzamos 4 columnas exactas en pantallas grandes */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 25px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.coctel-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    /* Quitamos cualquier height: 100% si lo habías puesto antes 
+       para que la card crezca según la foto */
+    height: fit-content; 
+}
+
+.coctel-card h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 15px 0 10px;
+}
+
+.coctel-card:hover {
+    transform: translateY(-5px);
+    border-color: #D4AF37;
+}
+
+.coctel-card img {
+    width: 100%;       /* Ocupa todo el ancho de la tarjeta */
+    height: auto;      /* La altura se ajusta sola según la foto original */
+    display: block;    /* Elimina espacios extra en la base */
+    object-fit: contain; /* Garantiza que la imagen se vea completa */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.coctel-card p {
+    color: #cccccc;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-top: 10px;
+    padding: 0 5px;
+}
+
+
+/* Estilo del botón Saber Más */
+.btn-saber-mas {
+    background: transparent;
+    border: 1px solid #D4AF37;
+    color: #D4AF37;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-saber-mas:hover {
+    background: #D4AF37;
+    color: #000;
+}
+
+/* Estilo del Modal (Ventana emergente) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    background-color: #121212;
+    /* Un gris aún más oscuro para contraste */
+    /* Centrado vertical y horizontal flexible */
+    margin: 50px auto;
+    padding: 25px;
+    border: 1.5px solid #D4AF37;
+    width: 90%;
+    /* Se adapta al ancho del celular */
+    max-width: 420px;
+    /* Ancho máximo para tablets/PC */
+    border-radius: 20px;
+    position: relative;
+    box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+
+    /* Animación de entrada suave */
+    animation: modalEntrada 0.3s ease-out;
+    /* Asegura que el padding no estire la card */
+}
+
+@keyframes modalEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+#modal-img {
+    width: 100%;
+    height: auto;
+    /* Altura automática */
+    max-height: 50vh;
+    /* No más de la mitad de la altura de pantalla */
+    object-fit: contain;
+    /* Muestra la imagen completa sin recortar */
+    border-radius: 15px;
+    margin-bottom: 20px;
+    background: #000;
+    /* Fondo negro si la imagen no es ancha */
+}
+
+.close-modal {
+    position: absolute;
+    top: -15px;
+    /* Ligeramente hacia arriba fuera de la card */
+    right: -15px;
+    /* Ligeramente hacia la derecha */
+    background: #D4AF37;
+    /* Dorado sólido */
+    color: #000 !important;
+    /* Texto negro para contraste */
+    width: 36px;
+    height: 36px;
+    line-height: 34px;
+    /* Centrado vertical del texto */
+    text-align: center;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s;
+}
+
+.close-modal:hover {
+    background: #fff;
+    color: #000;
+}
+
+.lista-variedades {
+    padding: 10px 0;
+    text-align: left;
+}
+
+.item-variedad {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.item-variedad img {
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+
+/* NUEVO CONTENEDOR DE TEXTO (H4 + P) */
+.info-variedad {
+    flex: 1;
+    /* Ocupa el resto del espacio disponible */
+    display: flex;
+    flex-direction: column;
+    /* Apila H4 sobre P */
+    gap: 5px;
+    /* Espacio estrecho entre título e ingredientes */
+}
+
+.info-variedad h4 {
+    color: #D4AF37;
+    font-size: 1.1rem;
+    margin: 0;
+
+}
+
+.info-variedad p {
+    color: #aaa;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Línea divisoria dorada */
+.divisor-oro {
+    border: 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    margin: 15px 0;
+}
+
+#modal-titulo {
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+#modal-ingredientes {
+    color: #cccccc;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    text-align: left;
+}
+
+@media (max-width: 1024px) {
+    .cocteles-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --- 6. MEDIA QUERY ESPECÍFICA PARA CELULARES --- */
+@media (max-width: 480px) {
+    .modal-content {
+        margin: 20px auto;
+        /* Menor margen arriba en móviles */
+        padding: 20px;
+        width: 95%;
+        /* Ocupa casi todo el ancho */
+    }
+
+    /* Traemos la X hacia adentro un poco en móvil para que no se corte */
+    .close-modal {
+        top: 10px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        line-height: 30px;
+        font-size: 18px;
+    }
+
+    #modal-titulo {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        /* Espacio para que no choque con la X */
+    }
+
+    #modal-img {
+        max-height: 40vh;
+        /* Imagen un poco más pequeña en móvil */
+    }
+}
+
+@media (max-width: 768px) {
+    .cocteles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px; /* Menos espacio para ganar pantalla */
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .coctel-card {
+        padding: 10px;
+    }
+
+    .coctel-card img {
+        height: 140px; /* Imágenes más pequeñas en móvil */
+    }
+
+    .coctel-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .btn-saber-mas {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+}
+
+/* Celulares muy pequeños: mantenemos 2 columnas pero ajustamos textos */
+@media (max-width: 380px) {
+    .cocteles-grid {
+        gap: 10px;
+    }
+    .coctel-card h3 {
+        font-size: 0.85rem;
+    }
+}

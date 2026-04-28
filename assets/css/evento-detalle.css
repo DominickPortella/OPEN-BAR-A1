@@ -1,0 +1,217 @@
+/* assets/css/evento-detalle.css */
+
+main.detalle-evento {
+    min-height: 80vh;
+    /* Esto empuja el footer hacia el final de la pantalla */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    /* Espacio antes del footer */
+}
+
+.detalle-evento {
+    padding-top: 140px;
+    /* Un poco más de espacio para el header dorado */
+    text-align: center;
+    min-height: 70vh;
+    /* Ajustado para que el footer no suba demasiado si hay poco contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.galeria-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px 5%;
+    width: 100%;
+}
+
+.galeria-item {
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+    background: #1a1a1a;
+}
+
+.galeria-item:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.foto-galeria,
+.video-galeria {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.galeria-item img,
+.galeria-item video {
+    width: 100%;
+    height: auto;
+    /* IMPORTANTE: Esto hace que se vea completa */
+    max-height: 80vh;
+    /* Evita que fotos muy verticales se salgan de la pantalla */
+    display: block;
+    border-radius: 15px;
+    object-fit: initial;
+}
+
+
+/* assets/css/evento-detalle.css */
+
+.contenedor-volver {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-premium-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre el ícono y el texto */
+    padding: 14px 25px;
+    background: transparent;
+    color: #d4af37; /* Dorado principal */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    width: 80%;
+    justify-content: center;
+    letter-spacing: 2px;
+    border: 2px solid #d4af37;
+    border-radius: 100px; /* Estilo píldora, muy moderno */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-premium-volver .icon {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto Hover Pro */
+.btn-premium-volver:hover {
+    background: #d4af37;
+    color: #000; /* Texto negro sobre fondo dorado */
+    transform: translateY(-5px); /* Se eleva */
+    box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4); /* Brillo dorado */
+}
+
+.btn-premium-volver:hover .icon {
+    transform: translateX(-8px); /* La flecha se mueve a la izquierda invitando a volver */
+}
+
+/* Efecto al hacer clic */
+.btn-premium-volver:active {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(212, 175, 55, 0.2);
+}
+
+
+
+/* Contenedor principal del carrusel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    /* Reducimos el gap en móvil */
+}
+
+/* Envoltura que oculta lo que desborda */
+.carousel-wrapper {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+    border-radius: 15px;
+}
+
+/* Ajuste de cada foto o video dentro del carrusel */
+.galeria-item {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+.galeria-item img,
+.galeria-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+/* Estilo de las flechas */
+.carousel-btn {
+    background: rgba(212, 175, 55, 0.2);
+    /* Dorado transparente */
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: #d4af37;
+    color: #000;
+}
+
+@media (max-width: 480px) {
+    .detalle-evento {
+        padding-top: 100px;
+        /* Menos espacio arriba en móvil */
+    }
+
+    .carousel-container {
+        width: 100%;
+        padding: 0 10px;
+        /* Pequeño margen para que las flechas no toquen el borde */
+    }
+
+    .galeria-item img,
+    .galeria-item video {
+        height: auto;
+        max-height: 60vh;
+        /* Evita que el video sea más alto que la pantalla */
+        width: 100%;
+        object-fit: contain;
+    }
+
+    /* Ajuste de flechas para que no estorben el contenido */
+    .carousel-btn {
+        padding: 8px 12px;
+        font-size: 1.2rem;
+        background: rgba(0, 0, 0, 0.5);
+        /* Más oscuro para mejor visibilidad */
+    }
+
+    .prev {
+        left: 5px;
+    }
+
+    .next {
+        right: 5px;
+    }
+}

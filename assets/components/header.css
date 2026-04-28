@@ -1,0 +1,168 @@
+/* --- Estilos Base del Header --- */
+.main-header {
+    width: 100%;
+    background: #000;
+    padding: 1.2rem 5%;
+    border-bottom: 2px solid #d4af37;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+}
+
+.logo {
+    color: #d4af37;
+    font-weight: 800;
+    font-size: 1.6rem;
+    text-decoration: none;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* --- Menú para PC --- */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    /* Elimina los puntos */
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-menu a:hover {
+    color: #d4af37;
+}
+
+/* --- Botón Hamburguesa --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    padding: 10px;
+}
+
+.menu-toggle span {
+    width: 28px;
+    height: 2px;
+    background-color: #d4af37;
+    transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+/* --- AJUSTE DE MÓVIL: Diseño Compacto y Elegante --- */
+@media (max-width: 768px) {
+
+    /* 1. Mantenemos el Header fijo y alineado */
+    .main-header {
+        position: fixed;
+        /* Asegura que el header (y la X) no se muevan al hacer scroll */
+        padding: 1rem 5%;
+        /* Espaciado cómodo */
+    }
+
+    .menu-toggle {
+        display: flex;
+        /* Asegura que aparezca la hamburguesa/X */
+    }
+
+    /* 2. El Panel del Menú: Menos ancho, más centrado */
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        /* --- AQUÍ ESTÁ EL CAMBIO --- */
+        width: 70%;
+        /* Un poco más delgado por defecto */
+        max-width: 300px;
+        /* NUNCA medirá más de 300px, sin importar la pantalla */
+        /* --------------------------- */
+        height: 100vh;
+        visibility: hidden;
+        background-color: #000;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        z-index: 1050;
+        border-left: 1px solid #d4af37;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-menu.active {
+        right: 0 !important;
+        visibility: visible;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.9);
+    }
+
+
+
+    /* 3. La Lista de Menú: Compactando el espaciado */
+    .nav-menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        /* Reducimos el gap de 35px a 20px para agrupar los elementos */
+        gap: 20px;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        list-style: none;
+        /* Asegura que no haya puntos */
+    }
+
+    /* 4. Los Enlaces: Tipografía refinada y tamaño reducido */
+    .nav-menu a {
+        /* Reducimos el tamaño de 2rem a 1.2rem. Mucho más refinado. */
+        font-size: 1.2rem;
+        font-weight: 500;
+        /* Peso medio, menos agresivo */
+        color: #fff;
+        display: block;
+        padding: 10px;
+        /* Área de toque cómoda pero no exagerada */
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        /* Espaciado entre letras para elegancia */
+        transition: all 0.2s ease;
+    }
+
+    /* Efecto de toque sutil en móvil */
+    .nav-menu a:active {
+        color: #d4af37;
+        transform: translateY(1px);
+        /* Pequeño empuje hacia abajo */
+    }
+
+    /* Transformación a la 'X' de cerrar */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

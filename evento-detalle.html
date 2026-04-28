@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Evento</title>
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/evento-detalle.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div id="header-container"></div>
+
+    <main class="detalle-evento">
+        <h1 id="evento-titulo" class="pícara"></h1>
+        <p id="evento-ubicacion" class="sub-pícara"></p>
+
+        <div class="carousel-container">
+            <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+
+            <div id="galeria-grid" class="carousel-wrapper">
+            </div>
+
+            <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+
+<div class="contenedor-volver">
+    <a href="../index.html" class="btn-premium-volver">
+        <i class="fas fa-arrow-left icon"></i> VOLVER A INICIO
+    </a>
+</div>
+    </main>
+
+    <div id="footer-container"></div>
+
+<script src="assets/js/evento-detalle.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
