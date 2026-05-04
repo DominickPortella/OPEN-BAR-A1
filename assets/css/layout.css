@@ -137,14 +137,16 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    animation: bounce 2s infinite; /* El brinco suave */
+    animation: bounce 2s infinite;
+    /* El brinco suave */
 }
 
 /* Dibujo del Mouse */
 .mouse {
     width: 25px;
     height: 40px;
-    border: 2px solid #d4af37; /* Tu dorado corporativo */
+    border: 2px solid #d4af37;
+    /* Tu dorado corporativo */
     border-radius: 20px;
     position: relative;
 }
@@ -165,18 +167,26 @@ h1 {
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.6); /* Un gris suave para no quitar protagonismo */
+    color: rgba(255, 255, 255, 0.6);
+    /* Un gris suave para no quitar protagonismo */
     font-weight: 400;
 }
 
 /* Animación de Brinco Sutil */
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateY(0);
     }
+
     40% {
         transform: translateY(-8px);
     }
+
     60% {
         transform: translateY(-4px);
     }
@@ -202,21 +212,26 @@ h1 {
     display: flex;
     gap: 20px;
     overflow-x: auto;
-    padding-top: 20px; 
-    padding-left: 5%; /* Alineado con tu padding general */
+    padding-top: 20px;
+    padding-left: 5%;
+    /* Alineado con tu padding general */
     padding-right: 5%;
     padding-bottom: 20px;
-    scroll-snap-type: x mandatory; /* Hace que las cards "encajen" al deslizar */
-    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+    scroll-snap-type: x mandatory;
+    /* Hace que las cards "encajen" al deslizar */
+    scrollbar-width: none;
+    /* Oculta scrollbar en Firefox */
 }
 
 .eventos-container::-webkit-scrollbar {
-    display: none; /* Oculta scrollbar en Chrome/Safari */
+    display: none;
+    /* Oculta scrollbar en Chrome/Safari */
 }
 
 /* La Card Individual */
 .event-card {
-    flex: 0 0 280px; /* No se encogen, siempre miden 280px */
+    flex: 0 0 280px;
+    /* No se encogen, siempre miden 280px */
     background: #1a1a1a;
     border-radius: 15px;
     overflow: hidden;
@@ -232,10 +247,14 @@ h1 {
 
 .event-image {
     width: 100%;
-    height: 200px; /* O el alto que prefieras para tus cards */
-    background-size: cover;    /* Esto hace que la foto llene el espacio sin deformarse */
-    background-position: center; /* Centra la parte más importante de la foto */
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1); /* Separación sutil con el texto */
+    height: 200px;
+    /* O el alto que prefieras para tus cards */
+    background-size: cover;
+    /* Esto hace que la foto llene el espacio sin deformarse */
+    background-position: center;
+    /* Centra la parte más importante de la foto */
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    /* Separación sutil con el texto */
 }
 
 .event-info {

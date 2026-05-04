@@ -178,6 +178,124 @@ main.detalle-evento {
     color: #000;
 }
 
+/* Contenedor de las tarjetas */
+.eventos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Diseño de la Tarjeta */
+.evento-card-small {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 10px;
+    width: 280px;
+    cursor: pointer;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.evento-card-small:hover {
+    border-color: #d4af37;
+    transform: translateY(-5px);
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 180px;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-card {
+    padding: 15px;
+    text-align: center;
+}
+
+.info-card h3 {
+    color: #d4af37;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.info-card p {
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+/* Ajustes del Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px); /* Efecto elegante */
+    z-index: 10000;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+    padding: 40px 20px;
+}
+
+.modal-content {
+    background: #0a0a0a;
+    border: 1px solid #d4af37;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 1100px;
+    position: relative;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 30px;
+    color: #d4af37;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.close-btn:hover { transform: scale(1.2); color: #fff; }
+
+/* Rejilla de la Galería (Masonry-style) */
+#modal-grid {
+    column-count: 2; /* 2 columnas en móvil */
+    column-gap: 15px;
+    margin-top: 20px;
+}
+
+.img-modal-original {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.img-modal-item, .video-modal-item {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    display: block;
+    border: 1px solid #222;
+    transition: 0.3s ease;
+}
+
+.img-modal-item:hover {
+    border-color: #d4af37;
+    transform: scale(1.02);
+}
+
 @media (max-width: 480px) {
     .detalle-evento {
         padding-top: 100px;
@@ -214,4 +332,8 @@ main.detalle-evento {
     .next {
         right: 5px;
     }
+}
+
+@media (min-width: 768px) {
+    #modal-grid { column-count: 3; } /* 3 columnas en PC */
 }

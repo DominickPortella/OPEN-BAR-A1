@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bartender - Inicio</title>
+    <title>Bartende</title>
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -12,39 +12,68 @@
 
     <div id="header-container"></div>
 
-<main>
-    <h1 class="pícara">No buscas un trago...</h1>
-    <p class="sub-pícara">Buscas una excusa para que la noche no termine.</p>
-    
-    <div class="scroll-indicator">
-        <div class="mouse">
-            <div class="wheel"></div>
+    <main>
+        <h1 class="pícara">No buscas un trago...</h1>
+        <p class="sub-pícara">Buscas una excusa para que la noche no termine.</p>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Sigue deslizando</p>
         </div>
-        <p>Sigue deslizando</p>
-    </div>
-</main>
+    </main>
 
 <section class="eventos-section">
-    <h2 class="section-title">Nuestras Experiencias</h2>
-    
-    <div class="eventos-container">
-<div class="event-card" onclick="verEvento('cumple-ronald')">
-    <div class="event-image" style="background-image: url('https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg');"></div>
-    <div class="event-info">
-        <h3>Cumpleaños de Ronald</h3>
-        <p>Villa Maria Del Triunfo, Lima, Perù.</p>
-    </div>
-</div>
+    <h2 class="section-title">Nuestros Eventos</h2>
 
-        <div class="event-card">
-            <div class="event-image" style="background-image: url('tu-imagen-2.jpg');"></div>
+    <div class="eventos-container">
+        <!-- 1. CUMPLEAÑOS -->
+        <div class="event-card" onclick="verCategoria('cumpleanos')">
+            <div class="event-image" style="background-image: url('assets/img/categorias/cumpleanos.jpg');"></div>
             <div class="event-info">
-                <h3>Eventos Corporativos</h3>
-                <p>Elegancia y profesionalismo en cada trago.</p>
+                <h3>Cumpleaños Especiales</h3>
+                <p>Celebra la vida con coctelería personalizada y un ambiente inolvidable.</p>
             </div>
         </div>
 
+        <!-- 2. EMPRESARIAL -->
+        <div class="event-card" onclick="verCategoria('empresarial')">
+            <div class="event-image" style="background-image: url('assets/img/categorias/corporativo.jpg');"></div>
+            <div class="event-info">
+                <h3>Corporativos & Empresas</h3>
+                <p>Elegancia y profesionalismo para lanzamientos, cenas y eventos de marca.</p>
+            </div>
         </div>
+
+        <!-- 3. QUINCEAÑEROS -->
+        <div class="event-card" onclick="verCategoria('quinceaneros')">
+            <div class="event-image" style="background-image: url('assets/img/categorias/quince.jpg');"></div>
+            <div class="event-info">
+                <h3>Quinceañeros</h3>
+                <p>Barras móviles temáticas y mocktails (cocteles sin alcohol) llenos de estilo.</p>
+            </div>
+        </div>
+
+        <!-- 4. MATRIMONIOS -->
+        <div class="event-card" onclick="verCategoria('matrimonios')">
+            <div class="event-image" style="background-image: url('assets/img/categorias/boda.jpg');"></div>
+            <div class="event-info">
+                <h3>Bodas & Matrimonios</h3>
+                <p>Brindamos sofisticación en el día más importante de tu vida.</p>
+            </div>
+        </div>
+
+        <!-- 5. JUVENILES -->
+        <div class="event-card" onclick="verCategoria('juveniles')">
+            <div class="event-image" style="background-image: url('assets/img/categorias/juvenil.jpg');"></div>
+            <div class="event-info">
+                <h3>Eventos Juveniles</h3>
+                <p>Energía, color y las mezclas más modernas para fiestas graduaciones y más.</p>
+            </div>
+        </div>
+
+    </div>
 </section>
 
     <div id="footer-container"></div>

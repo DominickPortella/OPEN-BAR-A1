@@ -7,7 +7,7 @@
             btn.onclick = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                
+
                 // Toggle simultáneo para sincronizar X y Panel
                 const isActive = btn.classList.toggle('active');
                 menu.classList.toggle('active');

@@ -12,10 +12,10 @@ function moveCarousel(direction) {
     // 1. PAUSAR VIDEO ACTUAL (UX)
     const currentItem = items[currentSlide];
     const currentVideo = currentItem.querySelector('video');
-    
+
     if (currentVideo) {
         currentVideo.pause();
-        currentVideo.currentTime = 0; 
+        currentVideo.currentTime = 0;
     }
 
     // 2. CÁLCULO DE ÍNDICE
@@ -49,7 +49,81 @@ function moveCarousel(direction) {
 function initCarousel() {
     currentSlide = 0;
     const items = document.querySelectorAll('.galeria-item');
-    if(items.length > 0) {
+    if (items.length > 0) {
         items.forEach(item => item.style.transform = `translateX(0%)`);
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const categoriaId = params.get('id');
+    const categoria = eventosData[categoriaId];
+
+    console.log("Cargando categoría:", categoriaId); // Para debugear
+
+    if (categoria && categoria.eventos) {
+        document.getElementById('evento-titulo').innerText = categoria.titulo;
+        
+        const container = document.getElementById('eventos-destacados-container');
+        container.innerHTML = ''; // Limpiar
+
+        categoria.eventos.forEach(evento => {
+            // Si la portada es 'url-foto-portada', cámbiala por una real o un color
+            const imagen = evento.portada.includes('http') ? evento.portada : 'https://via.placeholder.com/300x200?text=Bartender+A1';
+            
+            const card = `
+                <div class="evento-card-small" onclick="abrirEvento('${categoriaId}', '${evento.id}')" 
+                     style="background: #111; border: 1px solid #d4af37; margin: 10px; cursor: pointer; border-radius: 8px; overflow: hidden; width: 250px;">
+                    <img src="${imagen}" style="width: 100%; height: 150px; object-fit: cover;">
+                    <div style="padding: 15px; text-align: center;">
+                        <h3 style="color: #d4af37; margin: 0;">${evento.nombre}</h3>
+                        <p style="color: #ccc; font-size: 0.8rem;">${evento.lugar}</p>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += card;
+        });
+    }
+});
+
+function abrirEvento(catId, eveId) {
+    const evento = eventosData[catId].eventos.find(e => e.id === eveId);
+    if (evento) {
+        document.getElementById('modal-titulo-evento').innerText = evento.nombre;
+        const grid = document.getElementById('modal-grid');
+        grid.innerHTML = '';
+        
+        evento.galeria.forEach(item => {
+            if (item.type === 'image') {
+                grid.innerHTML += `<img src="${item.url}" style="width:100%; margin-bottom:10px;">`;
+            } else {
+                grid.innerHTML += `<video src="${item.url}" controls style="width:100%;"></video>`;
+            }
+        });
+        document.getElementById('modal-galeria').style.display = 'flex';
+    }
+}
+
+function cerrarModal() {
+    const modal = document.getElementById('modal-galeria');
+    
+    // 1. Buscamos todos los videos dentro del modal
+    const videos = modal.querySelectorAll('video');
+    
+    // 2. Los pausamos uno por uno y reseteamos el tiempo
+    videos.forEach(video => {
+        video.pause();
+        video.currentTime = 0; // Opcional: vuelve al inicio para que no se quede a medias
+    });
+
+    // 3. Ocultamos el modal y devolvemos el scroll a la página
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Cerrar con la tecla Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        cerrarModal();
+    }
+});

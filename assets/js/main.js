@@ -33,65 +33,99 @@ async function loadComponent(id, path, cssPath, jsPath) {
 
 /* --- 2. BASE DE DATOS DE EVENTOS --- */
 const eventosData = {
-    'cumple-ronald': {
-        titulo: "Cumpleaños de Ronald",
-        ubicacion: "Villa Maria Del Triunfo, Lima, Perù",
+'cumpleanos': {
+        titulo: "Cumpleaños Especiales",
+        eventos: [
+            {
+                id: 'cumple-ronald',
+                nombre: "Cumpleaños de Ronald",
+                lugar: "Villa María del Triunfo",
+                portada: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg',
+                galeria: [
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
+                    { type: 'video', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777305598/1243179581133581_HD_da0z1i.mp4' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306332/670424389_18116144788665306_4159129936483618943_n_g6x2hs.jpg' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306359/670559848_18116144812665306_3101233373304988321_n_uvw0tw.jpg' },
+                    { type: 'video  ', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777306501/1435869547745943_HD_zshy7v.mp4' }
+                ]
+            },
+            {
+                id: 'cumple-sofia',
+                nombre: "Quinceañero de Sofía",
+                lugar: "La Molina",
+                portada: 'url-foto-portada-2',
+                galeria: [ /* fotos y videos */ ]
+            }
+        ]
+    },
+    'empresarial': {
+        titulo: "Corporativos & Empresas",
+        ubicacion: "Eventos Corporativos Premium",
         medios: [
-            { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
-            { type: 'video', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777305598/1243179581133581_HD_da0z1i.mp4' },
-            { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306332/670424389_18116144788665306_4159129936483618943_n_g6x2hs.jpg' },
-            { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306359/670559848_18116144812665306_3101233373304988321_n_uvw0tw.jpg' },
-            { type: 'video', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777306501/1435869547745943_HD_zshy7v.mp4' }
+            { type: 'image', url: 'https://link-a-foto-corporativa.jpg' }
+        ]
+    },
+    'quinceaneros': {
+        titulo: "Quinceañeros",
+        ubicacion: "Barras Móviles Temáticas",
+        medios: [
+            { type: 'image', url: 'https://link-a-foto-quince.jpg' }
         ]
     }
+    // Añade matrimonios y juveniles siguiendo el mismo formato
 };
 
 /* --- 3. FUNCIONES DE NAVEGACIÓN --- */
-function verEvento(id) {
-    // Sin el / inicial para que funcione en subcarpetas de GitHub
+function verCategoria(id) {
+    // Redirige a la misma página de detalle, pero pasando el ID de la categoría
     window.location.href = `evento-detalle.html?id=${id}`;
 }
 
-/* --- 4. LÓGICA DE CARGA DINÁMICA --- */
-function initDetalleEvento() {
-    if (window.location.pathname.includes('evento-detalle.html')) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const id = urlParams.get('id');
-        const evento = eventosData[id];
 
-        if (evento) {
-            const tituloElem = document.getElementById('evento-titulo');
-            const ubicacionElem = document.getElementById('evento-ubicacion');
-            const galeria = document.getElementById('galeria-grid');
-
-            if (tituloElem) tituloElem.innerText = evento.titulo;
-            if (ubicacionElem) ubicacionElem.innerText = evento.ubicacion;
-
-            if (galeria) {
-                galeria.innerHTML = '';
-                evento.medios.forEach(medio => {
-                    if (medio.type === 'image') {
-                        galeria.innerHTML += `<div class="galeria-item"><img src="${medio.url}" alt="Foto"></div>`;
-                    } else if (medio.type === 'video') {
-                        galeria.innerHTML += `<div class="galeria-item"><video src="${medio.url}" controls class="video-galeria"></video></div>`;
-                    }
-                });
-            }
-        }
-    }
-}
 
 /* --- 5. INICIO DE LA APLICACIÓN --- */
 async function startApp() {
-    // Usamos los IDs que tienes en tus HTML (header-placeholder o header-container)
-    // Para asegurar compatibilidad, buscamos cuál existe:
+    // Detectamos qué contenedor de header/footer existe en el HTML actual
     const headerId = document.getElementById('header-placeholder') ? 'header-placeholder' : 'header-container';
     const footerId = document.getElementById('footer-placeholder') ? 'footer-placeholder' : 'footer-container';
 
+    // Cargamos componentes
     await loadComponent(headerId, 'assets/components/header.html', 'assets/components/header.css', 'assets/js/header.js');
     await loadComponent(footerId, 'assets/components/footer.html', 'assets/components/footer.css');
 
+    // ¡PASO CLAVE! Ajustamos los enlaces del menú después de cargarlos
+    ajustarRutasNavegacion();
+
     initDetalleEvento();
+}
+
+function ajustarRutasNavegacion() {
+    const esPaginaInterna = window.location.pathname.includes('/pages/') || window.location.pathname.includes('evento-detalle.html');
+    const navLinks = document.querySelectorAll('.nav-menu a, .logo');
+
+    navLinks.forEach(link => {
+        let href = link.getAttribute('href');
+
+        // Si estamos en una página dentro de /pages/ o en detalle
+        if (esPaginaInterna) {
+            if (href === 'index.html') {
+                // Para volver al inicio desde adentro
+                link.setAttribute('href', '../index.html');
+            } else if (href.startsWith('pages/')) {
+                // Si ya estamos en /pages/, quitamos el prefijo 'pages/' para que no se duplique
+                link.setAttribute('href', href.replace('pages/', ''));
+            } else if (href === '../index.html') {
+                // El logo ya tiene ../index.html, lo dejamos así
+                return;
+            }
+        } else {
+            // Si estamos en la RAÍZ (index.html)
+            if (href === '../index.html') {
+                // El logo debe ir a index.html (sin puntos)
+                link.setAttribute('href', 'index.html');
+            }
+        }
+    });
 }
 
 // Ejecutar al cargar

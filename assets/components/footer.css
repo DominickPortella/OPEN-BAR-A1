@@ -29,20 +29,23 @@
 }
 
 .footer-social p {
-    color: #888;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
+    color: #bbb; /* Un gris más claro para que sea legible sobre el fondo negro */
+    margin-bottom: 1.2rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
+    letter-spacing: 1px; /* Le da un toque más elegante */
 }
 
 .social-icons {
     display: flex;
     gap: 25px;
+    justify-content: center;
 }
 
 /* Estilo Base de Iconos */
 .icon {
-    font-size: 2rem; /* Tamaño igual para los tres */
+    font-size: 2rem;
+    /* Tamaño igual para los tres */
     transition: transform 0.3s ease, filter 0.3s ease;
     text-decoration: none;
     display: flex;
@@ -51,13 +54,24 @@
 }
 
 /* Colores Originales */
-.facebook { color: #1877F2; }
-.instagram { color: #E4405F; }
-.tiktok { color: #ffffff; } /* Blanco con fondo negro destaca mejor */
+.facebook {
+    color: #1877F2;
+}
+
+.instagram {
+    color: #E4405F;
+}
+
+.tiktok {
+    color: #ffffff;
+}
+
+/* Blanco con fondo negro destaca mejor */
 
 /* Interacciones (Hover) */
 .icon:hover {
-    transform: translateY(-5px) scale(1.1); /* Sube un poquito y crece */
+    transform: translateY(-5px) scale(1.1);
+    /* Sube un poquito y crece */
     filter: brightness(1.2);
 }
 
@@ -77,21 +91,24 @@
 
 /* Clase base para asegurar que el recorte funcione */
 .social-icons i {
-    display: inline-block; /* Necesario para que el degradado se aplique bien */
+    display: inline-block;
+    /* Necesario para que el degradado se aplique bien */
 }
 
 /* Instagram con su degradado original */
 .instagram i {
     /* 1. Definimos el degradado oficial de Instagram */
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    
+
     /* 2. Hacemos que el color del texto sea transparente */
     color: transparent;
-    
+
     /* 3. Recortamos el fondo con la forma del texto (el icono) */
-    -webkit-background-clip: text; /* Para Safari y Chrome antiguos */
-    background-clip: text;         /* Estándar moderno */
-    
+    -webkit-background-clip: text;
+    /* Para Safari y Chrome antiguos */
+    background-clip: text;
+    /* Estándar moderno */
+
     /* 4. Aseguramos que se visualice correctamente en todas partes */
     -webkit-text-fill-color: transparent;
 }
@@ -101,12 +118,14 @@
     transform: translateY(-5px) scale(1.1);
     /* En Instagram, en lugar de brightness, 
        podemos quitar el hover o cambiar ligeramente el fondo */
-    filter: none; /* Quitamos el filtro base para no alterar el degradado */
+    filter: none;
+    /* Quitamos el filtro base para no alterar el degradado */
 }
 
 /* Responsive */
 @media (max-width: 600px) {
     .social-icons {
-        gap: 40px; /* Más espacio en móviles para el dedo */
+        gap: 40px;
+        /* Más espacio en móviles para el dedo */
     }
 }
