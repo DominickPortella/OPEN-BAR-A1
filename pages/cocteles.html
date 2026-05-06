@@ -17,73 +17,33 @@
 
     <main class="cocteles-main">
         <h1 class="section-title">CARTA DE COCTELES</h1>
-        <div class="cocteles-grid">
-            <div class="coctel-card">
-                <img src="https://res.cloudinary.com/dzhstkyeu/image/upload/v1777391705/pina_colada_lostragos-1_lybpsx.jpg"
-                    alt="Piña Colada">
-                <h3>Piña Colada</h3>
-                <button class="btn-saber-mas"
-                    onclick="abrirModal('Piña Colada', 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777391705/pina_colada_lostragos-1_lybpsx.jpg', 'Ron blanco, crema de coco, jugo de piña natural y hielo.')">Saber
-                    más</button>
+        <div class="filtros-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="buscador" placeholder="Buscar cóctel...">
             </div>
 
-            <div class="coctel-card">
-                <img src="https://res.cloudinary.com/dzhstkyeu/image/upload/v1777391934/53534.jpg_raqil5.jpg"
-                    alt="Pantera Rosa">
-                <h3>Pantera Rosa</h3>
-                <button class="btn-saber-mas"
-                    onclick="abrirModal('Pantera Rosa', 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777391934/53534.jpg_raqil5.jpg', 'Pisco, crema de coco, granadina, jugo de piña y hielo licuado.')">Saber
-                    más</button>
+            <div class="categorias-tabs">
+                <button class="tab-btn active" onclick="filtrarCategoria('todos')">Todos</button>
+                <button class="tab-btn" onclick="filtrarCategoria('pisco')">Pisco</button>
+                <button class="tab-btn" onclick="filtrarCategoria('ron')">Ron</button>
+                <button class="tab-btn" onclick="filtrarCategoria('vodka')">Vodka</button>
+                <button class="tab-btn" onclick="filtrarCategoria('gin')">Gin</button>
+                <button class="tab-btn" onclick="filtrarCategoria('tequila')">Tequila</button>
             </div>
+        </div>
+        <div class="cocteles-grid" id="grid-cocteles"></div>
 
-            <div class="coctel-card">
-                <img src="https://res.cloudinary.com/dzhstkyeu/image/upload/v1777407698/RCZBEHLFJNE27AKYTY7BVFWNAQ_xe88ce.avif"
-                    alt="Algarrobina">
-                <h3>Algarrobina</h3>
-                <button class="btn-saber-mas"
-                    onclick="abrirModal('Algarrobina', 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777392732/images_iweokb.jpg', 'Pisco, jarabe de algarrobina, leche evaporada, yema de huevo y canela.')">Saber
-                    más</button>
-            </div>
 
-            <div class="coctel-card">
-                <img src="https://res.cloudinary.com/dzhstkyeu/image/upload/v1777392883/images_z1zrdv.jpg"
-                    alt="Pisco Sour">
-                <h3>Pisco Sour</h3>
-                <button class="btn-saber-mas" onclick="abrirModal('Pisco Sour', '', '', [
-        {nombre: 'Clásico', img: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777392883/images_z1zrdv.jpg', ing: 'Pisco, limón, jarabe de goma y clara de huevo.'},
-        {nombre: 'Maracuyá', img: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777393039/Pisco-Sour-Maracuya-Misky-Hallpa-Alcala-de-Henares_cuz5b2.png', ing: 'Pisco, pulpa de maracuyá, jarabe de goma y clara de huevo.'}
-    ])">Ver sabores</button>
+        <div id="modal-coctel" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="modal-titulo"></h2>
+                <img id="modal-img" src="" alt="">
+                <p id="modal-ingredientes"></p>
+                <div class="lista-variedades"></div>
             </div>
-
-            <div class="coctel-card">
-                <img src="https://res.cloudinary.com/dzhstkyeu/image/upload/v1777393222/Daiquiri_3000x3000_primary-206eb2330cb04852ab7d780dcf3d55ef_idgj51.jpg"
-                    alt="Daiquiri">
-                <h3>Daiquiri</h3>
-                <button class="btn-saber-mas" onclick="abrirModal('Daiquiri', '', '', [
-        {nombre: 'Clásico', img: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777393222/Daiquiri_3000x3000_primary-206eb2330cb04852ab7d780dcf3d55ef_idgj51.jpg', ing: 'Ron blanco, jugo de limón y jarabe de goma.'},
-        {nombre: 'Fresa', img: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777393630/Daquiri-de-fresa-scaled_tprg8u.jpg', ing: 'Ron blanco, fresas frescas y jugo de limón.'}
-    ])">Ver sabores</button>
-            </div>
-
-            <div class="coctel-card">
-                <img src="https://res.cloudinary.com/dzhstkyeu/image/upload/v1777394015/Coctel-margarita-receta_ixgf5p.jpg"
-                    alt="Margarita">
-                <h3>Margarita</h3>
-                <button class="btn-saber-mas" onclick="abrirModal('Margarita', '', '', [
-        {nombre: 'Clásico', img: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777394015/Coctel-margarita-receta_ixgf5p.jpg', ing: 'Tequila, triple sec, jugo de limón y borde de sal.'},
-        {nombre: 'Fresa', img: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777394077/images_skeukp.jpg', ing: 'Tequila, fresas frescas, licor de naranja y limón.'}
-    ])">Ver sabores</button>
-            </div>
-
-            <div id="modal-coctel" class="modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <h2 id="modal-titulo"></h2>
-                    <img id="modal-img" src="" alt="">
-                    <p id="modal-ingredientes"></p>
-                    <div class="lista-variedades"></div>
-                </div>
-            </div>
+        </div>
         </div>
     </main>
 

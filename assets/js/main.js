@@ -191,29 +191,34 @@ async function startApp() {
 }
 
 function ajustarRutasNavegacion() {
-    const esPaginaEnPages = window.location.pathname.includes('/pages/');
-    const esPaginaDetalle = window.location.pathname.includes('evento-detalle.html');
-
-    // Seleccionamos todos los enlaces del menú y el logo
+    const enCarpetaPages = window.location.pathname.includes('/pages/');
     const navLinks = document.querySelectorAll('.nav-menu a, .nav-menu-mobile a, .logo, .footer-links a');
 
     navLinks.forEach(link => {
         let href = link.getAttribute('href');
+
+        // Si el enlace no existe o es externo, no hacer nada
         if (!href || href === '#' || href.startsWith('http')) return;
 
-        // CASO A: Estás en /pages/cocteles.html
-        if (esPaginaEnPages) {
-            if (href === 'index.html' || href === '../index.html') {
-                link.setAttribute('href', '../index.html'); // Sube un nivel para ir a la raíz
-            } else if (!href.startsWith('../') && !href.includes('pages/')) {
-                // Si el enlace apunta a otra página en la raíz (como evento-detalle)
-                link.setAttribute('href', '../' + href);
+        // Limpiamos el href de posibles "../" previos para normalizarlo
+        const nombreArchivo = href.replace('../', '').replace('pages/', '');
+
+        if (enCarpetaPages) {
+            // Si estamos DENTRO de la carpeta pages
+            if (nombreArchivo === 'index.html') {
+                link.setAttribute('href', '../index.html');
+            } else {
+                // Para cocteles.html, contacto.html, etc.
+                // Como ya estamos en /pages/, solo necesitamos el nombre del archivo
+                link.setAttribute('href', nombreArchivo);
             }
-        }
-        // CASO B: Estás en /evento-detalle.html (Raíz)
-        else if (esPaginaDetalle) {
-            if (href.startsWith('../')) {
-                link.setAttribute('href', href.replace('../', './')); // Mantente en la raíz
+        } else {
+            // Si estamos en la RAÍZ (index.html)
+            if (nombreArchivo === 'index.html') {
+                link.setAttribute('href', 'index.html');
+            } else {
+                // Si vamos a una página interna, nos aseguramos que lleve 'pages/'
+                link.setAttribute('href', 'pages/' + nombreArchivo);
             }
         }
     });

@@ -284,6 +284,71 @@
     }
 }
 
+
+.filtros-container {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #D4AF37;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 12px 12px 45px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 25px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    border-color: #D4AF37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.categorias-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 1px solid #444;
+    color: #aaa;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    border-color: #D4AF37;
+    color: #D4AF37;
+    background: rgba(212, 175, 55, 0.1);
+}
+
 @media (max-width: 768px) {
     .cocteles-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -312,7 +377,19 @@
         font-size: 0.8rem;
         padding: 6px 10px;
     }
+
+    .categorias-tabs {
+        gap: 5px;
+    }
+
+    .tab-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
 }
+
+
+
 
 /* Celulares muy pequeños: mantenemos 2 columnas pero ajustamos textos */
 @media (max-width: 380px) {
