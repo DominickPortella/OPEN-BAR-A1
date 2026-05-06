@@ -29,11 +29,13 @@
 }
 
 .footer-social p {
-    color: #bbb; /* Un gris más claro para que sea legible sobre el fondo negro */
+    color: #bbb;
+    /* Un gris más claro para que sea legible sobre el fondo negro */
     margin-bottom: 1.2rem;
     font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px; /* Le da un toque más elegante */
+    letter-spacing: 1px;
+    /* Le da un toque más elegante */
 }
 
 .social-icons {

@@ -63,14 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (categoria && categoria.eventos) {
         document.getElementById('evento-titulo').innerText = categoria.titulo;
-        
+
         const container = document.getElementById('eventos-destacados-container');
         container.innerHTML = ''; // Limpiar
 
-categoria.eventos.forEach(evento => {
-    const imagen = evento.portada.includes('http') ? evento.portada : 'https://via.placeholder.com/300x400?text=Bartender+A1';
-    
-    const card = `
+        categoria.eventos.forEach(evento => {
+            const imagen = evento.portada.includes('http') ? evento.portada : 'https://via.placeholder.com/300x400?text=Bartender+A1';
+
+            const card = `
         <div class="evento-card-small" onclick="abrirEvento('${categoriaId}', '${evento.id}')">
             <img src="${imagen}" alt="${evento.nombre}">
             <div class="card-info-detalle">
@@ -79,8 +79,8 @@ categoria.eventos.forEach(evento => {
             </div>
         </div>
     `;
-    container.innerHTML += card;
-});
+            container.innerHTML += card;
+        });
     }
 });
 
@@ -90,7 +90,7 @@ function abrirEvento(catId, eveId) {
         document.getElementById('modal-titulo-evento').innerText = evento.nombre;
         const grid = document.getElementById('modal-grid');
         grid.innerHTML = '';
-        
+
         evento.galeria.forEach(item => {
             if (item.type === 'image') {
                 grid.innerHTML += `<img src="${item.url}" style="width:100%; margin-bottom:10px;">`;
@@ -104,10 +104,10 @@ function abrirEvento(catId, eveId) {
 
 function cerrarModal() {
     const modal = document.getElementById('modal-galeria');
-    
+
     // 1. Buscamos todos los videos dentro del modal
     const videos = modal.querySelectorAll('video');
-    
+
     // 2. Los pausamos uno por uno y reseteamos el tiempo
     videos.forEach(video => {
         video.pause();

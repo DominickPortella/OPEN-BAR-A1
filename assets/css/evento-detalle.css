@@ -76,10 +76,12 @@ main.detalle-evento {
 .btn-premium-volver {
     display: inline-flex;
     align-items: center;
-    gap: 15px; /* Espacio entre el ícono y el texto */
+    gap: 15px;
+    /* Espacio entre el ícono y el texto */
     padding: 14px 25px;
     background: transparent;
-    color: #d4af37; /* Dorado principal */
+    color: #d4af37;
+    /* Dorado principal */
     text-decoration: none;
     font-weight: 700;
     font-size: 0.8rem;
@@ -88,7 +90,8 @@ main.detalle-evento {
     justify-content: center;
     letter-spacing: 2px;
     border: 2px solid #d4af37;
-    border-radius: 100px; /* Estilo píldora, muy moderno */
+    border-radius: 100px;
+    /* Estilo píldora, muy moderno */
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -101,13 +104,17 @@ main.detalle-evento {
 /* Efecto Hover Pro */
 .btn-premium-volver:hover {
     background: #d4af37;
-    color: #000; /* Texto negro sobre fondo dorado */
-    transform: translateY(-5px); /* Se eleva */
-    box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4); /* Brillo dorado */
+    color: #000;
+    /* Texto negro sobre fondo dorado */
+    transform: translateY(-5px);
+    /* Se eleva */
+    box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4);
+    /* Brillo dorado */
 }
 
 .btn-premium-volver:hover .icon {
-    transform: translateX(-8px); /* La flecha se mueve a la izquierda invitando a volver */
+    transform: translateX(-8px);
+    /* La flecha se mueve a la izquierda invitando a volver */
 }
 
 /* Efecto al hacer clic */
@@ -183,11 +190,15 @@ main.detalle-evento {
     display: grid;
     /* Esto crea columnas de al menos 280px que se estiran para llenar el espacio */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px; /* Espacio entre las cards */
+    gap: 25px;
+    /* Espacio entre las cards */
     padding: 20px;
-    max-width: 1200px; /* Para que no se dispersen demasiado en pantallas gigantes */
-    margin: 0 auto;    /* Centra todo el bloque en la pantalla */
-    justify-items: center; /* Centra las cards dentro de sus celdas */
+    max-width: 1200px;
+    /* Para que no se dispersen demasiado en pantallas gigantes */
+    margin: 0 auto;
+    /* Centra todo el bloque en la pantalla */
+    justify-items: center;
+    /* Centra las cards dentro de sus celdas */
 }
 
 /* Diseño de la Tarjeta */
@@ -198,8 +209,10 @@ main.detalle-evento {
     border: 1px solid #d4af37;
     border-radius: 12px;
     overflow: hidden;
-    width: 100%;      /* Ahora la card llena el espacio del grid */
-    max-width: 350px; /* Pero no dejamos que crezca más de esto para que no se deforme */
+    width: 100%;
+    /* Ahora la card llena el espacio del grid */
+    max-width: 350px;
+    /* Pero no dejamos que crezca más de esto para que no se deforme */
     height: auto;
     cursor: pointer;
     transition: transform 0.3s ease, border-color 0.3s ease;
@@ -207,9 +220,11 @@ main.detalle-evento {
 
 .evento-card-small img {
     width: 100%;
-    height: auto;        /* Mantiene la proporción original */
+    height: auto;
+    /* Mantiene la proporción original */
     display: block;
-    object-fit: contain; /* Cero recortes */
+    object-fit: contain;
+    /* Cero recortes */
     background: #000;
 }
 
@@ -276,10 +291,13 @@ main.detalle-evento {
 .modal-overlay {
     display: none;
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px); /* Efecto elegante */
+    backdrop-filter: blur(8px);
+    /* Efecto elegante */
     z-index: 10000;
     justify-content: center;
     align-items: flex-start;
@@ -301,7 +319,8 @@ main.detalle-evento {
 
 .close-btn {
     position: absolute;
-    top: 15px; right: 20px;
+    top: 15px;
+    right: 20px;
     font-size: 30px;
     color: #d4af37;
     cursor: pointer;
@@ -309,11 +328,15 @@ main.detalle-evento {
 }
 
 
-.close-btn:hover { transform: scale(1.2); color: #fff; }
+.close-btn:hover {
+    transform: scale(1.2);
+    color: #fff;
+}
 
 /* Rejilla de la Galería (Masonry-style) */
 #modal-grid {
-    column-count: 2; /* 2 columnas en móvil */
+    column-count: 2;
+    /* 2 columnas en móvil */
     column-gap: 15px;
     margin-top: 20px;
 }
@@ -323,7 +346,8 @@ main.detalle-evento {
     margin-bottom: 15px;
 }
 
-.img-modal-item, .video-modal-item {
+.img-modal-item,
+.video-modal-item {
     width: 100%;
     margin-bottom: 15px;
     border-radius: 8px;
@@ -376,5 +400,9 @@ main.detalle-evento {
 }
 
 @media (min-width: 768px) {
-    #modal-grid { column-count: 3; } /* 3 columnas en PC */
+    #modal-grid {
+        column-count: 3;
+    }
+
+    /* 3 columnas en PC */
 }

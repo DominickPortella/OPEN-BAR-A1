@@ -13,23 +13,23 @@
 <body>
     <div id="header-container"></div>
 
-<main class="detalle-evento">
-    <h1 id="evento-titulo" class="pícara"></h1>
-    <!-- Quitamos el ID de ubicación para que no salga el 'undefined' de main.js -->
-    <p class="sub-pícara">Selecciona un evento para ver los detalles</p>
+    <main class="detalle-evento">
+        <h1 id="evento-titulo" class="pícara"></h1>
+        <!-- Quitamos el ID de ubicación para que no salga el 'undefined' de main.js -->
+        <p class="sub-pícara">Selecciona un evento para ver los detalles</p>
 
-    <!-- AQUÍ SE CARGARÁN LAS CARDS -->
-    <div id="eventos-destacados-container" class="eventos-grid"></div>
+        <!-- AQUÍ SE CARGARÁN LAS CARDS -->
+        <div id="eventos-destacados-container" class="eventos-grid"></div>
 
-    <!-- MODAL OCULTO -->
-    <div id="modal-galeria" class="modal-overlay" style="display:none;">
-        <div class="modal-content">
-            <span class="close-btn" onclick="cerrarModal()">&times;</span>
-            <h2 id="modal-titulo-evento" style="color: #d4af37;"></h2>
-            <div id="modal-grid"></div>
+        <!-- MODAL OCULTO -->
+        <div id="modal-galeria" class="modal-overlay" style="display:none;">
+            <div class="modal-content">
+                <span class="close-btn" onclick="cerrarModal()">&times;</span>
+                <h2 id="modal-titulo-evento" style="color: #d4af37;"></h2>
+                <div id="modal-grid"></div>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 
     <div id="footer-container"></div>
 

@@ -33,7 +33,7 @@ async function loadComponent(id, path, cssPath, jsPath) {
 
 /* --- 2. BASE DE DATOS DE EVENTOS --- */
 const eventosData = {
-'cumpleanos': {
+    'cumpleanos': {
         titulo: "Cumpleaños Especiales",
         eventos: [
             {
@@ -55,7 +55,7 @@ const eventosData = {
                 lugar: "La Molina",
                 portada: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777871169/658862429_18114012943665306_7230823319736606173_n_aepp3e.jpg',
                 galeria: [
-                                        { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
                     { type: 'video', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777305598/1243179581133581_HD_da0z1i.mp4' },
                     { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306332/670424389_18116144788665306_4159129936483618943_n_g6x2hs.jpg' },
                     { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306359/670559848_18116144812665306_3101233373304988321_n_uvw0tw.jpg' },
@@ -86,7 +86,7 @@ const eventosData = {
                 lugar: "La Molina",
                 portada: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777871169/658862429_18114012943665306_7230823319736606173_n_aepp3e.jpg',
                 galeria: [
-                                        { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
                     { type: 'video', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777305598/1243179581133581_HD_da0z1i.mp4' },
                     { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306332/670424389_18116144788665306_4159129936483618943_n_g6x2hs.jpg' },
                     { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306359/670559848_18116144812665306_3101233373304988321_n_uvw0tw.jpg' },
@@ -124,7 +124,7 @@ const eventosData = {
                 lugar: "La Molina",
                 portada: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777871169/658862429_18114012943665306_7230823319736606173_n_aepp3e.jpg',
                 galeria: [
-                                        { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
                     { type: 'video', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777305598/1243179581133581_HD_da0z1i.mp4' },
                     { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306332/670424389_18116144788665306_4159129936483618943_n_g6x2hs.jpg' },
                     { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306359/670559848_18116144812665306_3101233373304988321_n_uvw0tw.jpg' },
@@ -155,7 +155,7 @@ const eventosData = {
                 lugar: "La Molina",
                 portada: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777871169/658862429_18114012943665306_7230823319736606173_n_aepp3e.jpg',
                 galeria: [
-                                        { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
                     { type: 'video', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777305598/1243179581133581_HD_da0z1i.mp4' },
                     { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306332/670424389_18116144788665306_4159129936483618943_n_g6x2hs.jpg' },
                     { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306359/670559848_18116144812665306_3101233373304988321_n_uvw0tw.jpg' },
@@ -193,7 +193,7 @@ async function startApp() {
 function ajustarRutasNavegacion() {
     const esPaginaEnPages = window.location.pathname.includes('/pages/');
     const esPaginaDetalle = window.location.pathname.includes('evento-detalle.html');
-    
+
     // Seleccionamos todos los enlaces del menú y el logo
     const navLinks = document.querySelectorAll('.nav-menu a, .nav-menu-mobile a, .logo, .footer-links a');
 
@@ -209,7 +209,7 @@ function ajustarRutasNavegacion() {
                 // Si el enlace apunta a otra página en la raíz (como evento-detalle)
                 link.setAttribute('href', '../' + href);
             }
-        } 
+        }
         // CASO B: Estás en /evento-detalle.html (Raíz)
         else if (esPaginaDetalle) {
             if (href.startsWith('../')) {
