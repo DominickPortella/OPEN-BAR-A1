@@ -180,28 +180,69 @@ main.detalle-evento {
 
 /* Contenedor de las tarjetas */
 .eventos-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
+    display: grid;
+    /* Esto crea columnas de al menos 280px que se estiran para llenar el espacio */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; /* Espacio entre las cards */
     padding: 20px;
-    margin-top: 30px;
+    max-width: 1200px; /* Para que no se dispersen demasiado en pantallas gigantes */
+    margin: 0 auto;    /* Centra todo el bloque en la pantalla */
+    justify-items: center; /* Centra las cards dentro de sus celdas */
 }
 
 /* Diseño de la Tarjeta */
 .evento-card-small {
+    display: flex;
+    flex-direction: column;
     background: #111;
-    border: 1px solid #333;
-    border-radius: 10px;
-    width: 280px;
-    cursor: pointer;
-    transition: 0.3s;
+    border: 1px solid #d4af37;
+    border-radius: 12px;
     overflow: hidden;
+    width: 100%;      /* Ahora la card llena el espacio del grid */
+    max-width: 350px; /* Pero no dejamos que crezca más de esto para que no se deforme */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.evento-card-small img {
+    width: 100%;
+    height: auto;        /* Mantiene la proporción original */
+    display: block;
+    object-fit: contain; /* Cero recortes */
+    background: #000;
+}
+
+/* Nueva clase para el texto para que no use estilos de main.js */
+.card-info-detalle {
+    padding: 15px;
+    text-align: center;
+    background: #111;
+    border-top: 1px solid #222;
+}
+
+.evento-card-small div {
+    padding: 12px;
+    text-align: center;
+    background: #111;
+    border-top: 1px solid #222;
+}
+
+.card-info-detalle h3 {
+    color: #d4af37;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.card-info-detalle p {
+    color: #aaa;
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
 }
 
 .evento-card-small:hover {
-    border-color: #d4af37;
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    border-color: #fff;
 }
 
 .card-img-wrapper {

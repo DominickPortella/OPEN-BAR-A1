@@ -51,18 +51,48 @@ const eventosData = {
             },
             {
                 id: 'cumple-sofia',
-                nombre: "Quinceañero de Sofía",
+                nombre: "Cumpleaños de Sofía",
                 lugar: "La Molina",
-                portada: 'url-foto-portada-2',
-                galeria: [ /* fotos y videos */ ]
+                portada: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777871169/658862429_18114012943665306_7230823319736606173_n_aepp3e.jpg',
+                galeria: [
+                                        { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
+                    { type: 'video', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777305598/1243179581133581_HD_da0z1i.mp4' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306332/670424389_18116144788665306_4159129936483618943_n_g6x2hs.jpg' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306359/670559848_18116144812665306_3101233373304988321_n_uvw0tw.jpg' },
+                    { type: 'video  ', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777306501/1435869547745943_HD_zshy7v.mp4' }
+                ]
             }
         ]
     },
     'empresarial': {
         titulo: "Corporativos & Empresas",
-        ubicacion: "Eventos Corporativos Premium",
-        medios: [
-            { type: 'image', url: 'https://link-a-foto-corporativa.jpg' }
+        eventos: [
+            {
+                id: 'cumple-ronald',
+                nombre: "Cumpleaños de Ronald",
+                lugar: "Villa María del Triunfo",
+                portada: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg',
+                galeria: [
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
+                    { type: 'video', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777305598/1243179581133581_HD_da0z1i.mp4' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306332/670424389_18116144788665306_4159129936483618943_n_g6x2hs.jpg' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306359/670559848_18116144812665306_3101233373304988321_n_uvw0tw.jpg' },
+                    { type: 'video  ', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777306501/1435869547745943_HD_zshy7v.mp4' }
+                ]
+            },
+            {
+                id: 'cumple-sofia',
+                nombre: "Cumpleaños de Sofía",
+                lugar: "La Molina",
+                portada: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777871169/658862429_18114012943665306_7230823319736606173_n_aepp3e.jpg',
+                galeria: [
+                                        { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
+                    { type: 'video', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777305598/1243179581133581_HD_da0z1i.mp4' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306332/670424389_18116144788665306_4159129936483618943_n_g6x2hs.jpg' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306359/670559848_18116144812665306_3101233373304988321_n_uvw0tw.jpg' },
+                    { type: 'video  ', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777306501/1435869547745943_HD_zshy7v.mp4' }
+                ]
+            }
         ]
     },
     'quinceaneros': {
@@ -71,8 +101,69 @@ const eventosData = {
         medios: [
             { type: 'image', url: 'https://link-a-foto-quince.jpg' }
         ]
+    },
+    'matrimonios': {
+        titulo: "Bodas & Matrimonios",
+        eventos: [
+            {
+                id: 'cumple-ronald',
+                nombre: "Cumpleaños de Ronald",
+                lugar: "Villa María del Triunfo",
+                portada: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg',
+                galeria: [
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
+                    { type: 'video', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777305598/1243179581133581_HD_da0z1i.mp4' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306332/670424389_18116144788665306_4159129936483618943_n_g6x2hs.jpg' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306359/670559848_18116144812665306_3101233373304988321_n_uvw0tw.jpg' },
+                    { type: 'video  ', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777306501/1435869547745943_HD_zshy7v.mp4' }
+                ]
+            },
+            {
+                id: 'cumple-sofia',
+                nombre: "Cumpleaños de Sofía",
+                lugar: "La Molina",
+                portada: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777871169/658862429_18114012943665306_7230823319736606173_n_aepp3e.jpg',
+                galeria: [
+                                        { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
+                    { type: 'video', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777305598/1243179581133581_HD_da0z1i.mp4' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306332/670424389_18116144788665306_4159129936483618943_n_g6x2hs.jpg' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306359/670559848_18116144812665306_3101233373304988321_n_uvw0tw.jpg' },
+                    { type: 'video  ', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777306501/1435869547745943_HD_zshy7v.mp4' }
+                ]
+            }
+        ]
+    },
+    'juveniles': {
+        titulo: "Juveniles",
+        eventos: [
+            {
+                id: 'cumple-ronald',
+                nombre: "Cumpleaños de Ronald",
+                lugar: "Villa María del Triunfo",
+                portada: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg',
+                galeria: [
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
+                    { type: 'video', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777305598/1243179581133581_HD_da0z1i.mp4' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306332/670424389_18116144788665306_4159129936483618943_n_g6x2hs.jpg' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306359/670559848_18116144812665306_3101233373304988321_n_uvw0tw.jpg' },
+                    { type: 'video  ', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777306501/1435869547745943_HD_zshy7v.mp4' }
+                ]
+            },
+            {
+                id: 'cumple-sofia',
+                nombre: "Cumpleaños de Sofía",
+                lugar: "La Molina",
+                portada: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777871169/658862429_18114012943665306_7230823319736606173_n_aepp3e.jpg',
+                galeria: [
+                                        { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777300559/669852632_18116144800665306_1928821062832928060_n_ymebmx.jpg' },
+                    { type: 'video', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777305598/1243179581133581_HD_da0z1i.mp4' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306332/670424389_18116144788665306_4159129936483618943_n_g6x2hs.jpg' },
+                    { type: 'image', url: 'https://res.cloudinary.com/dzhstkyeu/image/upload/v1777306359/670559848_18116144812665306_3101233373304988321_n_uvw0tw.jpg' },
+                    { type: 'video  ', url: 'https://res.cloudinary.com/dzhstkyeu/video/upload/v1777306501/1435869547745943_HD_zshy7v.mp4' }
+                ]
+            }
+        ]
     }
-    // Añade matrimonios y juveniles siguiendo el mismo formato
 };
 
 /* --- 3. FUNCIONES DE NAVEGACIÓN --- */
@@ -100,29 +191,29 @@ async function startApp() {
 }
 
 function ajustarRutasNavegacion() {
-    const esPaginaInterna = window.location.pathname.includes('/pages/') || window.location.pathname.includes('evento-detalle.html');
-    const navLinks = document.querySelectorAll('.nav-menu a, .logo');
+    const esPaginaEnPages = window.location.pathname.includes('/pages/');
+    const esPaginaDetalle = window.location.pathname.includes('evento-detalle.html');
+    
+    // Seleccionamos todos los enlaces del menú y el logo
+    const navLinks = document.querySelectorAll('.nav-menu a, .nav-menu-mobile a, .logo, .footer-links a');
 
     navLinks.forEach(link => {
         let href = link.getAttribute('href');
+        if (!href || href === '#' || href.startsWith('http')) return;
 
-        // Si estamos en una página dentro de /pages/ o en detalle
-        if (esPaginaInterna) {
-            if (href === 'index.html') {
-                // Para volver al inicio desde adentro
-                link.setAttribute('href', '../index.html');
-            } else if (href.startsWith('pages/')) {
-                // Si ya estamos en /pages/, quitamos el prefijo 'pages/' para que no se duplique
-                link.setAttribute('href', href.replace('pages/', ''));
-            } else if (href === '../index.html') {
-                // El logo ya tiene ../index.html, lo dejamos así
-                return;
+        // CASO A: Estás en /pages/cocteles.html
+        if (esPaginaEnPages) {
+            if (href === 'index.html' || href === '../index.html') {
+                link.setAttribute('href', '../index.html'); // Sube un nivel para ir a la raíz
+            } else if (!href.startsWith('../') && !href.includes('pages/')) {
+                // Si el enlace apunta a otra página en la raíz (como evento-detalle)
+                link.setAttribute('href', '../' + href);
             }
-        } else {
-            // Si estamos en la RAÍZ (index.html)
-            if (href === '../index.html') {
-                // El logo debe ir a index.html (sin puntos)
-                link.setAttribute('href', 'index.html');
+        } 
+        // CASO B: Estás en /evento-detalle.html (Raíz)
+        else if (esPaginaDetalle) {
+            if (href.startsWith('../')) {
+                link.setAttribute('href', href.replace('../', './')); // Mantente en la raíz
             }
         }
     });

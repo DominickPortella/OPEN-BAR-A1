@@ -67,22 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('eventos-destacados-container');
         container.innerHTML = ''; // Limpiar
 
-        categoria.eventos.forEach(evento => {
-            // Si la portada es 'url-foto-portada', cámbiala por una real o un color
-            const imagen = evento.portada.includes('http') ? evento.portada : 'https://via.placeholder.com/300x200?text=Bartender+A1';
-            
-            const card = `
-                <div class="evento-card-small" onclick="abrirEvento('${categoriaId}', '${evento.id}')" 
-                     style="background: #111; border: 1px solid #d4af37; margin: 10px; cursor: pointer; border-radius: 8px; overflow: hidden; width: 250px;">
-                    <img src="${imagen}" style="width: 100%; height: 150px; object-fit: cover;">
-                    <div style="padding: 15px; text-align: center;">
-                        <h3 style="color: #d4af37; margin: 0;">${evento.nombre}</h3>
-                        <p style="color: #ccc; font-size: 0.8rem;">${evento.lugar}</p>
-                    </div>
-                </div>
-            `;
-            container.innerHTML += card;
-        });
+categoria.eventos.forEach(evento => {
+    const imagen = evento.portada.includes('http') ? evento.portada : 'https://via.placeholder.com/300x400?text=Bartender+A1';
+    
+    const card = `
+        <div class="evento-card-small" onclick="abrirEvento('${categoriaId}', '${evento.id}')">
+            <img src="${imagen}" alt="${evento.nombre}">
+            <div class="card-info-detalle">
+                <h3>${evento.nombre}</h3>
+                <p>${evento.lugar}</p>
+            </div>
+        </div>
+    `;
+    container.innerHTML += card;
+});
     }
 });
 

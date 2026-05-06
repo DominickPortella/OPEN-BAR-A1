@@ -249,12 +249,14 @@ h1 {
     width: 100%;
     height: 200px;
     /* O el alto que prefieras para tus cards */
-    background-size: cover;
+    background-size: contain;
     /* Esto hace que la foto llene el espacio sin deformarse */
     background-position: center;
+    background-repeat: no-repeat;
     /* Centra la parte más importante de la foto */
     border-bottom: 1px solid rgba(212, 175, 55, 0.1);
     /* Separación sutil con el texto */
+    background-color: #000;
 }
 
 .event-info {

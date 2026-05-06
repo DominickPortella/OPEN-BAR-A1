@@ -16,7 +16,7 @@
 .cocteles-grid {
     display: grid;
     /* Forzamos 4 columnas exactas en pantallas grandes */
-    grid-template-columns: repeat(5, 1fr); 
+    grid-template-columns: repeat(5, 1fr);
     gap: 25px;
     width: 100%;
     margin-top: 20px;
@@ -31,7 +31,7 @@
     flex-direction: column;
     /* Quitamos cualquier height: 100% si lo habías puesto antes 
        para que la card crezca según la foto */
-    height: fit-content; 
+    height: fit-content;
 }
 
 .coctel-card h3 {
@@ -46,10 +46,14 @@
 }
 
 .coctel-card img {
-    width: 100%;       /* Ocupa todo el ancho de la tarjeta */
-    height: auto;      /* La altura se ajusta sola según la foto original */
-    display: block;    /* Elimina espacios extra en la base */
-    object-fit: contain; /* Garantiza que la imagen se vea completa */
+    width: 100%;
+    /* Ocupa todo el ancho de la tarjeta */
+    height: auto;
+    /* La altura se ajusta sola según la foto original */
+    display: block;
+    /* Elimina espacios extra en la base */
+    object-fit: contain;
+    /* Garantiza que la imagen se vea completa */
     border-radius: 10px;
     margin-bottom: 10px;
 }
@@ -283,7 +287,8 @@
 @media (max-width: 768px) {
     .cocteles-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px; /* Menos espacio para ganar pantalla */
+        gap: 15px;
+        /* Menos espacio para ganar pantalla */
     }
 
     .section-title {
@@ -295,7 +300,8 @@
     }
 
     .coctel-card img {
-        height: 140px; /* Imágenes más pequeñas en móvil */
+        height: 140px;
+        /* Imágenes más pequeñas en móvil */
     }
 
     .coctel-card h3 {
@@ -313,6 +319,7 @@
     .cocteles-grid {
         gap: 10px;
     }
+
     .coctel-card h3 {
         font-size: 0.85rem;
     }
